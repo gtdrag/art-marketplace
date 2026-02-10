@@ -259,6 +259,29 @@
       box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 80px var(--accent-purple-glow);
     }
 
+    .hero-qr {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.625rem;
+      margin-bottom: 3rem;
+    }
+
+    .qr-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px;
+      line-height: 0;
+    }
+
+    .qr-box svg { display: block; }
+
+    .qr-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -325,9 +348,6 @@
       line-height: 1.5;
     }
 
-    .stats-cta {
-      text-align: center;
-    }
 
     /* ===== Feature Blocks (Dabble-style alternating) ===== */
     .feature-block {
@@ -360,8 +380,6 @@
       line-height: 1.7;
       margin-bottom: 1.5rem;
     }
-
-    .feature-block-text .btn { margin-top: 0.5rem; }
 
     /* App Store promo card */
     .feature-block-promo {
@@ -494,6 +512,7 @@
       .hero-logo-icon { width: 56px; height: 56px; }
       .hero-logo-icon svg { width: 30px; height: 30px; }
       .hero-ctas { flex-direction: column; }
+      .hero-qr { display: none; }
       .hero-phone-frame { width: 240px; height: 480px; }
       .promo-phone { width: 180px; }
       .promo-headline { font-size: 1.375rem; }
@@ -540,6 +559,44 @@
         <a href="#" class="btn btn-primary">Download on the App Store</a>
         <a href="#" class="btn btn-outline">Get it on Google Play</a>
       </div>
+      <div class="hero-qr">
+        <div class="qr-box">
+          <svg viewBox="0 0 29 29" width="100" height="100" shape-rendering="crispEdges">
+            <rect width="29" height="29" fill="#fff"/>
+            <g fill="#0d1520">
+              <!-- Position patterns (top-left, top-right, bottom-left) -->
+              <rect x="0" y="0" width="7" height="1"/><rect x="0" y="6" width="7" height="1"/><rect x="0" y="1" width="1" height="5"/><rect x="6" y="1" width="1" height="5"/><rect x="2" y="2" width="3" height="3"/>
+              <rect x="22" y="0" width="7" height="1"/><rect x="22" y="6" width="7" height="1"/><rect x="22" y="1" width="1" height="5"/><rect x="28" y="1" width="1" height="5"/><rect x="24" y="2" width="3" height="3"/>
+              <rect x="0" y="22" width="7" height="1"/><rect x="0" y="28" width="7" height="1"/><rect x="0" y="23" width="1" height="5"/><rect x="6" y="23" width="1" height="5"/><rect x="2" y="24" width="3" height="3"/>
+              <!-- Timing patterns -->
+              <rect x="8" y="6" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/><rect x="12" y="6" width="1" height="1"/><rect x="14" y="6" width="1" height="1"/><rect x="16" y="6" width="1" height="1"/><rect x="18" y="6" width="1" height="1"/><rect x="20" y="6" width="1" height="1"/>
+              <rect x="6" y="8" width="1" height="1"/><rect x="6" y="10" width="1" height="1"/><rect x="6" y="12" width="1" height="1"/><rect x="6" y="14" width="1" height="1"/><rect x="6" y="16" width="1" height="1"/><rect x="6" y="18" width="1" height="1"/><rect x="6" y="20" width="1" height="1"/>
+              <!-- Data modules (decorative pattern) -->
+              <rect x="8" y="8" width="1" height="1"/><rect x="10" y="8" width="1" height="1"/><rect x="12" y="9" width="1" height="1"/><rect x="14" y="8" width="2" height="1"/><rect x="17" y="8" width="1" height="1"/><rect x="19" y="9" width="1" height="1"/>
+              <rect x="9" y="10" width="1" height="1"/><rect x="11" y="10" width="2" height="1"/><rect x="15" y="10" width="1" height="1"/><rect x="18" y="10" width="1" height="1"/><rect x="20" y="10" width="1" height="1"/>
+              <rect x="8" y="12" width="1" height="1"/><rect x="10" y="12" width="1" height="1"/><rect x="13" y="12" width="2" height="1"/><rect x="16" y="12" width="1" height="1"/><rect x="19" y="12" width="1" height="1"/>
+              <rect x="9" y="14" width="2" height="1"/><rect x="12" y="14" width="1" height="1"/><rect x="15" y="14" width="1" height="1"/><rect x="17" y="14" width="2" height="1"/><rect x="20" y="14" width="1" height="1"/>
+              <rect x="8" y="16" width="1" height="1"/><rect x="11" y="16" width="1" height="1"/><rect x="14" y="16" width="1" height="1"/><rect x="16" y="16" width="2" height="1"/><rect x="19" y="16" width="1" height="1"/>
+              <rect x="10" y="18" width="1" height="1"/><rect x="12" y="18" width="2" height="1"/><rect x="16" y="18" width="1" height="1"/><rect x="18" y="18" width="1" height="1"/><rect x="20" y="18" width="1" height="1"/>
+              <rect x="8" y="20" width="2" height="1"/><rect x="11" y="20" width="1" height="1"/><rect x="14" y="20" width="2" height="1"/><rect x="17" y="20" width="1" height="1"/><rect x="19" y="20" width="2" height="1"/>
+              <!-- Right/bottom data -->
+              <rect x="22" y="8" width="1" height="1"/><rect x="24" y="9" width="1" height="1"/><rect x="26" y="8" width="1" height="1"/><rect x="23" y="10" width="1" height="1"/><rect x="25" y="11" width="1" height="1"/><rect x="27" y="10" width="1" height="1"/>
+              <rect x="22" y="12" width="1" height="1"/><rect x="24" y="13" width="2" height="1"/><rect x="27" y="12" width="1" height="1"/><rect x="23" y="14" width="1" height="1"/><rect x="26" y="15" width="1" height="1"/><rect x="28" y="14" width="1" height="1"/>
+              <rect x="22" y="16" width="1" height="1"/><rect x="25" y="17" width="1" height="1"/><rect x="27" y="16" width="1" height="1"/><rect x="24" y="18" width="1" height="1"/><rect x="26" y="19" width="1" height="1"/>
+              <rect x="22" y="20" width="2" height="1"/><rect x="25" y="20" width="1" height="1"/><rect x="28" y="20" width="1" height="1"/>
+              <rect x="8" y="22" width="1" height="1"/><rect x="10" y="23" width="1" height="1"/><rect x="13" y="22" width="1" height="1"/><rect x="15" y="23" width="2" height="1"/><rect x="18" y="22" width="1" height="1"/><rect x="20" y="23" width="1" height="1"/>
+              <rect x="9" y="24" width="1" height="1"/><rect x="12" y="25" width="1" height="1"/><rect x="14" y="24" width="1" height="1"/><rect x="17" y="25" width="2" height="1"/><rect x="20" y="24" width="1" height="1"/>
+              <rect x="8" y="26" width="2" height="1"/><rect x="11" y="27" width="1" height="1"/><rect x="14" y="26" width="1" height="1"/><rect x="16" y="27" width="2" height="1"/><rect x="20" y="26" width="1" height="1"/>
+              <rect x="9" y="28" width="1" height="1"/><rect x="12" y="28" width="2" height="1"/><rect x="15" y="28" width="1" height="1"/><rect x="18" y="28" width="1" height="1"/><rect x="20" y="28" width="1" height="1"/>
+              <rect x="22" y="22" width="1" height="1"/><rect x="24" y="23" width="1" height="1"/><rect x="27" y="22" width="1" height="1"/>
+              <rect x="23" y="24" width="1" height="1"/><rect x="25" y="25" width="2" height="1"/><rect x="28" y="24" width="1" height="1"/>
+              <rect x="22" y="26" width="1" height="1"/><rect x="24" y="27" width="1" height="1"/><rect x="26" y="26" width="1" height="1"/><rect x="28" y="27" width="1" height="1"/>
+              <rect x="23" y="28" width="1" height="1"/><rect x="25" y="28" width="1" height="1"/><rect x="27" y="28" width="2" height="1"/>
+            </g>
+          </svg>
+        </div>
+        <div class="qr-label">Scan to download</div>
+      </div>
       <div class="hero-phone">
         <div class="hero-phone-frame">
           <img src="assets/screenshot-draft-room.png" alt="RotoGPT Draft Room - Live draft board with AI recommendations" style="width:100%;height:100%;object-fit:cover;">
@@ -574,9 +631,6 @@
           <div class="stat-label">Go from 60 minutes of daily lineup research to a single tap. It's that simple.</div>
         </div>
       </div>
-      <div class="stats-cta">
-        <a href="#" class="btn btn-primary">Download Now</a>
-      </div>
     </div>
   </section>
 
@@ -593,7 +647,6 @@
         <div class="feature-block-text">
           <h2>One Tap, <span class="accent">Best Lineup</span></h2>
           <p>AI analyzes matchups, weather, pitcher splits, and hot streaks to set your optimal lineup every single day. What used to take an hour of research now takes one tap.</p>
-          <a href="#" class="btn btn-primary">Download Now</a>
         </div>
       </div>
     </div>
@@ -612,7 +665,6 @@
         <div class="feature-block-text">
           <h2>AI-Powered <span class="accent">Draft Room</span></h2>
           <p>Real-time pick recommendations during your live draft. Claude AI evaluates player value, positional scarcity, and your roster needs to surface the best pick every round.</p>
-          <a href="#" class="btn btn-primary">Download Now</a>
         </div>
       </div>
     </div>
@@ -631,7 +683,6 @@
         <div class="feature-block-text">
           <h2>AI Team <span class="accent">Analysis</span></h2>
           <p>Get an instant breakdown of your roster's strengths, weaknesses, and projected finish. AI grades your draft, identifies category gaps, and tells you exactly where to improve.</p>
-          <a href="#" class="btn btn-primary">Download Now</a>
         </div>
       </div>
     </div>
