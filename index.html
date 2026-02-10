@@ -298,57 +298,6 @@
       margin-bottom: 1.5rem;
     }
 
-    /* ===== Stat Cards ===== */
-    .stats {
-      padding: 5rem 0;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .stat-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2rem;
-      text-align: center;
-      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    }
-
-    .stat-card:hover {
-      border-color: rgba(108, 59, 250, 0.4);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(108, 59, 250, 0.1);
-    }
-
-    .stat-icon {
-      width: 56px;
-      height: 56px;
-      margin: 0 auto 1rem;
-      background: rgba(108, 59, 250, 0.1);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .stat-number {
-      font-size: 1.75rem;
-      font-weight: 800;
-      margin-bottom: 0.25rem;
-    }
-
-    .stat-label {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-
-
     /* ===== Feature Blocks (Dabble-style alternating) ===== */
     .feature-block {
       padding: 5rem 0;
@@ -496,7 +445,6 @@
     /* ===== Responsive ===== */
     @media (max-width: 960px) {
       .nav-center { display: none; }
-      .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
       .feature-block-inner { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
       .feature-block.flipped .feature-block-promo { order: -1; }
       .feature-block.flipped .feature-block-text { order: 2; }
@@ -600,35 +548,6 @@
       <div class="hero-phone">
         <div class="hero-phone-frame">
           <img src="assets/screenshot-draft-room.png" alt="RotoGPT Draft Room - Live draft board with AI recommendations" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6c3bfa" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <div class="stat-number">Powered by Claude AI</div>
-          <div class="stat-label">Anthropic's most capable model analyzes matchups, trends, and projections in real time</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e8922a" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-          <div class="stat-number">Yahoo Fantasy Integrated</div>
-          <div class="stat-label">Connects directly to your Yahoo Fantasy Baseball leagues with secure OAuth</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          </div>
-          <div class="stat-number">One Tap Optimization</div>
-          <div class="stat-label">Go from 60 minutes of daily lineup research to a single tap. It's that simple.</div>
         </div>
       </div>
     </div>
