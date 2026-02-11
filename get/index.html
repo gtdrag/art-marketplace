@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download RotoGPT</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0d1520;
+      --text: #ffffff;
+      --text-muted: #8294aa;
+      --accent: #e8922a;
+      --purple: #6c3bfa;
+      --card: #1a2332;
+      --border: #253040;
+    }
+    body {
+      font-family: 'Rubik', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .wrap { max-width: 420px; }
+    .spinner {
+      width: 40px; height: 40px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 1.5rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    h1 { font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem; }
+    h1 span { color: var(--accent); }
+    .sub { color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 2rem; line-height: 1.6; }
+    .buttons { display: flex; flex-direction: column; gap: 0.75rem; }
+    .btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.625rem;
+      padding: 0.875rem 1.5rem; border-radius: 12px; font-size: 1rem;
+      font-weight: 600; text-decoration: none; transition: all 0.2s;
+    }
+    .btn-apple { background: #fff; color: #000; }
+    .btn-apple:hover { background: #f0f0f0; transform: translateY(-2px); }
+    .btn-google { background: var(--card); color: var(--text); border: 1px solid var(--border); }
+    .btn-google:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .btn svg { flex-shrink: 0; }
+    .fallback { display: none; }
+    .show { display: block; }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrap">
+    <div class="spinner" id="spinner"></div>
+    <h1>Roto<span>GPT</span></h1>
+    <p class="sub">Redirecting you to the right store...</p>
+
+    <div class="buttons fallback" id="buttons">
+      <a href="https://apps.apple.com/app/rotogpt-ai-fantasy-baseball/id6740091498" class="btn btn-apple">
+        <svg width="20" height="24" viewBox="0 0 20 24" fill="currentColor"><path d="M15.07 12.84c-.02-2.47 2.02-3.66 2.11-3.72-1.15-1.68-2.94-1.91-3.58-1.94-1.52-.15-2.97.9-3.74.9-.77 0-1.96-.88-3.23-.85-1.66.02-3.19.97-4.05 2.46-1.73 3-.44 7.44 1.24 9.87.82 1.19 1.8 2.53 3.09 2.48 1.24-.05 1.71-.8 3.21-.8s1.92.8 3.23.78c1.33-.02 2.18-1.21 2.99-2.41.94-1.38 1.33-2.71 1.35-2.78-.03-.01-2.6-1-2.62-3.96zM12.64 5.42c.68-.83 1.14-1.97 1.02-3.12-0.98.04-2.18.66-2.88 1.48-.63.73-1.18 1.9-1.03 3.02 1.1.09 2.22-.56 2.89-1.38z"/></svg>
+        Download on the App Store
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.rotogpt.app" class="btn btn-google">
+        <svg width="20" height="22" viewBox="0 0 20 22" fill="none"><path d="M1 1.36l9.5 9.5L1 20.36" stroke="#34A853" stroke-width="2" stroke-linecap="round"/><path d="M1 1.36L14.5 10.86 1 20.36" stroke="#FBBC05" stroke-width="2" stroke-linecap="round"/><path d="M14.5 10.86L19 10.86" stroke="#EA4335" stroke-width="2" stroke-linecap="round"/><path d="M1 1.36h0L14.5 10.86" stroke="#4285F4" stroke-width="2" stroke-linecap="round"/></svg>
+        Get it on Google Play
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Smart redirect: detect platform and send to the right store
+    (function() {
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+
+      // UPDATE THESE URLs with your actual store listings
+      var APPLE_URL  = 'https://apps.apple.com/app/rotogpt-ai-fantasy-baseball/id6740091498';
+      var GOOGLE_URL = 'https://play.google.com/store/apps/details?id=com.rotogpt.app';
+
+      var isIOS     = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+      var isAndroid = /Android/.test(ua);
+
+      if (isIOS) {
+        window.location.replace(APPLE_URL);
+      } else if (isAndroid) {
+        window.location.replace(GOOGLE_URL);
+      } else {
+        // Desktop or unknown — show both buttons
+        document.getElementById('spinner').style.display = 'none';
+        document.querySelector('.sub').textContent = 'Choose your platform to download RotoGPT.';
+        document.getElementById('buttons').classList.add('show');
+      }
+
+      // Safety: if redirect doesn't happen in 3s, show buttons
+      setTimeout(function() {
+        document.getElementById('spinner').style.display = 'none';
+        document.querySelector('.sub').textContent = 'Choose your platform to download RotoGPT.';
+        document.getElementById('buttons').classList.add('show');
+      }, 3000);
+    })();
+  </script>
+</body>
+</html>
